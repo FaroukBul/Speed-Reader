@@ -60,7 +60,13 @@ function testGetCurrentWords(){
 it("get-current-words-test", testGetCurrentWords)
 
 function testReadWords(){
-    testPage.readWords(0.1)
+    testPage.readWords()
 }
 it("test-read-words-1", testReadWords)
 
+function testSpeedToTime(){
+    let speed = 60
+    testPage.speedToTime(speed)
+    assert.strictEqual(testPage.secondsPerGroup, 3)
+}
+it("test-speed-to-time", testSpeedToTime)
